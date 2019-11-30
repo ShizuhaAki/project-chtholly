@@ -14,3 +14,20 @@ C:\Users\Shu Shang\AppData\Local\Temporary Projects\WangJun\bin\Debug\WangJun.ex
 C:\Users\Shu Shang\AppData\Local\Temporary Projects\WangJun\bin\Debug\WangJun.application
 C:\Users\Shu Shang\AppData\Local\Temporary Projects\WangJun\obj\Debug\WangJun.exe.manifest
 C:\Users\Shu Shang\AppData\Local\Temporary Projects\WangJun\obj\Debug\WangJun.application
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.exe.config
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.exe.manifest
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.application
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.exe
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.pdb
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.xml
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.vbprojAssemblyReference.cache
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.AboutBox1.resources
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.Form1.resources
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.Resources.resources
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.vbproj.GenerateResource.cache
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.vbproj.CoreCompileInputs.cache
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.exe.manifest
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.application
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.exe
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.xml
+C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.pdb

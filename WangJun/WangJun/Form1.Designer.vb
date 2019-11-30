@@ -31,6 +31,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,6 +48,7 @@ Partial Class Form1
         '
         Me.NumericUpDown2.Location = New System.Drawing.Point(126, 8)
         Me.NumericUpDown2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.NumericUpDown2.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(50, 23)
         Me.NumericUpDown2.TabIndex = 11
@@ -73,8 +75,7 @@ Partial Class Form1
         '
         'Button5
         '
-        Me.Button5.BackColor = System.Drawing.Color.Lime
-        Me.Button5.Enabled = False
+        Me.Button5.BackColor = System.Drawing.SystemColors.Control
         Me.Button5.Location = New System.Drawing.Point(82, 140)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(115, 31)
@@ -109,12 +110,22 @@ Partial Class Form1
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "0"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(224, 185)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 18
+        Me.Button2.Text = "关于"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AcceptButton = Me.Button5
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(311, 231)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -141,4 +152,5 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button2 As Button
 End Class
