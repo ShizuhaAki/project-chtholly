@@ -9,6 +9,4 @@ This software is NOT READY FOR RELEASE, the executable is located at ```/WangJun
 
 Clone it using ```git clone  https://github.com/Ravenclaw-OIer/project-chtholly ```.
 
-I’ll put a release version some time.
-
-### 
+~~I’ll put a release version some time.~~ Done.
