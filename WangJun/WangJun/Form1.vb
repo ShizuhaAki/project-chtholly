@@ -40,6 +40,9 @@ Public Class Form1
         Next
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If NumericUpDown2.Value = 0 Then
+            NumericUpDown2.Value = 1
+        End If
         init()
         NumericUpDown2.Enabled = False
         Button5.Enabled = True

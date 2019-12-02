@@ -31,3 +31,20 @@ C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.applicatio
 C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.exe
 C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.xml
 C:\Users\Shu Shang\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.pdb
+E:\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.exe.config
+E:\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.exe.manifest
+E:\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.application
+E:\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.exe
+E:\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.pdb
+E:\project-chtholly\WangJun\WangJun\bin\Debug\WangJun.xml
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.vbprojAssemblyReference.cache
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.AboutBox1.resources
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.Form1.resources
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.Resources.resources
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.vbproj.GenerateResource.cache
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.vbproj.CoreCompileInputs.cache
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.exe.manifest
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.application
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.exe
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.xml
+E:\project-chtholly\WangJun\WangJun\obj\Debug\WangJun.pdb
