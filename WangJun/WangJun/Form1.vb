@@ -74,7 +74,7 @@ Public Class Form1
 
     Private Sub 打开OToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开OToolStripMenuItem.Click
         Try
-            Dim reader = My.Computer.FileSystem.OpenTextFileReader("D:\Documents\log.chtholly")
+            Dim reader = My.Computer.FileSystem.OpenTextFileReader("log.chtholly")
             total = Val(reader.ReadLine())
             init()
             Dim usedCount = Val(reader.ReadLine())
@@ -99,7 +99,7 @@ Public Class Form1
         '   SaveFileDialog1.ShowDialog()
         '  Dim reply = SaveFileDialog1.FileName
         Try
-            Dim writer = My.Computer.FileSystem.OpenTextFileWriter("D:\Documents\log.chtholly", False)
+            Dim writer = My.Computer.FileSystem.OpenTextFileWriter("log.chtholly", False)
             writer.WriteLine(total)
             writer.WriteLine(used.Count)
             For i = 1 To used.Count
