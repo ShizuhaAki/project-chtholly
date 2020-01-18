@@ -17,6 +17,8 @@
 Public Class Form1
     Const N As Integer = 200
     Dim vis As New HashSet(Of Integer)
+    Dim used As New ArrayList
+    Dim total As Integer
     Dim Randomizer As New Random
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim id, res As Integer
@@ -31,25 +33,83 @@ Public Class Form1
         id = Randomizer.Next(0, vis.Count())
         res = vis.ElementAt(id)
         vis.Remove(res)
+        used.Add(res)
         Label5.Text = res
         Label2.Text = (Val(Label2.Text) + 1).ToString
     End Sub
     Private Sub init()
-        For i As Integer = 1 To NumericUpDown2.Value
+        For i As Integer = 1 To total
             vis.Add(i)
         Next
+        used.Clear() : Button5.Enabled = True
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If NumericUpDown2.Value = 0 Then
-            NumericUpDown2.Value = 1
-        End If
-        init()
-        NumericUpDown2.Enabled = False
-        Button5.Enabled = True
-        Button1.Enabled = False
+    Private Sub 新建ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 新建ToolStripMenuItem.Click
+        Try
+            vis.Clear() : used.Clear()
+            Label2.Text = "0" : Label5.Text = "0"
+            Dim userin As String = InputBox("请输入学生数量", "学号抽取", "32")
+            Dim value As Integer = Val(userin)
+            If (value <= 0) Then
+                Dim throwe As DivideByZeroException
+                Throw throwe
+            End If
+            total = value
+            init()
+        Catch exDiv As DivideByZeroException
+            MessageBox.Show("学生数量应该是正整数", "学号抽取")
+            Button5.Enabled = False
+        Catch ex As Exception
+            MessageBox.Show("出现错误，请重新输入", "学号抽取")
+            Button5.Enabled = False
+        End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub 关于AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于AToolStripMenuItem.Click
         AboutBox1.Show()
+    End Sub
+
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+
+    End Sub
+
+    Private Sub 打开OToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开OToolStripMenuItem.Click
+        Try
+            Dim reader = My.Computer.FileSystem.OpenTextFileReader("log.chtholly")
+            total = Val(reader.ReadLine())
+            init()
+            Dim usedCount = Val(reader.ReadLine())
+            Label2.Text = usedCount.ToString()
+            For i As Integer = 1 To usedCount
+                Dim usedNext = Val(reader.ReadLine())
+                vis.RemoveWhere(Function(num As Integer) As Boolean
+                                    Return num = usedNext
+                                End Function)
+                used.Add(usedNext)
+            Next
+            reader.Close()
+        Catch exFile As IO.IOException
+            MessageBox.Show("读取文件时出现错误", "学号抽取")
+            MessageBox.Show(exFile.Message)
+        Catch ex As Exception
+            MessageBox.Show("出现错误。文件可能已经损坏。", "学号抽取")
+        End Try
+    End Sub
+
+    Private Sub 另存为AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 另存为AToolStripMenuItem.Click
+        '   SaveFileDialog1.ShowDialog()
+        '  Dim reply = SaveFileDialog1.FileName
+        Try
+            Dim writer = My.Computer.FileSystem.OpenTextFileWriter("log.chtholly", False)
+            writer.WriteLine(total)
+            writer.WriteLine(used.Count)
+            For i = 1 To used.Count
+                writer.WriteLine(used.Item(i - 1))
+            Next
+            writer.Close()
+        Catch exFile As IO.IOException
+            MessageBox.Show("写入文件时出现错误", "学号抽取")
+        Catch ex As Exception
+            MessageBox.Show("出现错误。文件可能已经损坏。", "学号抽取")
+        End Try
     End Sub
 End Class
