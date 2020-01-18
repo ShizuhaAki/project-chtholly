@@ -7,6 +7,13 @@ To use this, make sure you have .NET Framework 4.1 (or, at your option, any late
 
 This software is NOT READY FOR RELEASE, the executable is located at ```/WangJun/WangJun/bin/Debug```. If you wish to make any changes, be sure to have a Visual Basic Interpreter installed.
 
-Clone it using ```git clone  https://github.com/Ravenclaw-OIer/project-chtholly ```.
+Clone it using ```git clone  https://github.com/Ravenclaw-OIer/project-chtholly.git ```.
 
-~~I’ll put a release version some time.~~ Done.
+This repo is open source under GNU GPL v3, see LICENSE.txt for more information.
+
+### To-do list
+
+- [ ] Autosave
+- [ ] Check for update automatically
+- [ ] Encrypt log file
+- [ ] Cross platform support
