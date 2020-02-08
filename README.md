@@ -13,7 +13,7 @@ This repo is open source under GNU GPL v3, see LICENSE.txt for more information.
 
 ### To-do list
 
-- [ ] Autosave
+- [ ] Autosave (This feature is now in beta, you can find it in filedev branch)
 - [ ] Check for update automatically
 - [ ] Encrypt log file
 - [ ] Cross platform support
