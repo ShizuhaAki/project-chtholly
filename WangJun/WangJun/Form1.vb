@@ -1,5 +1,5 @@
 ﻿'    project-chtholly, a tool for randomly selecting students in Chinese classes
-'    Copyright(C) 2019 Ravenclaw_OIer
+'    Copyright(C) 2020 Ravenclaw_OIer
 
 '    This program Is free software: you can redistribute it And/Or modify
 '    it under the terms Of the GNU General Public License As published by
@@ -19,13 +19,14 @@ Public Class Form1
     Dim vis As New HashSet(Of Integer)
     Dim used As New ArrayList
     Dim total As Integer
+    Public Shared hasclosed As Boolean
     Dim Randomizer As New Random
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim id, res As Integer
         If (vis.Count() = 0) Then
             Dim reply = MessageBox.Show("已经全部抽取过一遍。" + vbCrLf + "您想要继续吗？", "学号抽取", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
             If reply = DialogResult.Yes Then
-                init()
+                Init()
             Else
                 Close()
             End If
@@ -37,7 +38,7 @@ Public Class Form1
         Label5.Text = res
         Label2.Text = (Val(Label2.Text) + 1).ToString
     End Sub
-    Private Sub init()
+    Private Sub Init()
         For i As Integer = 1 To total
             vis.Add(i)
         Next
@@ -50,12 +51,12 @@ Public Class Form1
             Dim userin As String = InputBox("请输入学生数量", "学号抽取", "32")
             Dim value As Integer = Val(userin)
             If (value <= 0) Then
-                Dim throwe As DivideByZeroException
+                Dim throwe As New InvalidInputException
                 Throw throwe
             End If
             total = value
-            init()
-        Catch exDiv As DivideByZeroException
+            Init()
+        Catch exDiv As InvalidInputException
             MessageBox.Show("学生数量应该是正整数", "学号抽取")
             Button5.Enabled = False
         Catch ex As Exception
@@ -64,19 +65,13 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub 关于AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于AToolStripMenuItem.Click
-        AboutBox1.Show()
-    End Sub
 
-    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
-
-    End Sub
 
     Private Sub 打开OToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 打开OToolStripMenuItem.Click
         Try
             Dim reader = My.Computer.FileSystem.OpenTextFileReader("log.chtholly")
             total = Val(reader.ReadLine())
-            init()
+            Init()
             Dim usedCount = Val(reader.ReadLine())
             Label2.Text = usedCount.ToString()
             For i As Integer = 1 To usedCount
@@ -91,13 +86,11 @@ Public Class Form1
             MessageBox.Show("读取文件时出现错误", "学号抽取")
             MessageBox.Show(exFile.Message)
         Catch ex As Exception
-            MessageBox.Show("出现错误。文件可能已经损坏。", "学号抽取")
+            MessageBox.Show("出现错误。文件可能已经损坏", "学号抽取")
         End Try
     End Sub
 
-    Private Sub 另存为AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 另存为AToolStripMenuItem.Click
-        '   SaveFileDialog1.ShowDialog()
-        '  Dim reply = SaveFileDialog1.FileName
+    Private Sub SaveLog()
         Try
             Dim writer = My.Computer.FileSystem.OpenTextFileWriter("log.chtholly", False)
             writer.WriteLine(total)
@@ -112,4 +105,32 @@ Public Class Form1
             MessageBox.Show("出现错误。文件可能已经损坏。", "学号抽取")
         End Try
     End Sub
+    Private Sub 另存为AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 另存为AToolStripMenuItem.Click
+        '   SaveFileDialog1.ShowDialog()
+        '  Dim reply = SaveFileDialog1.FileName
+        SaveLog()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Initiallize Timer
+        Timer1.Interval = 5000
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If (自动保存ToolStripMenuItem.Checked = True) Then
+            SaveLog()
+        End If
+    End Sub
+End Class
+Public Class InvalidInputException
+    Inherits System.Exception
+
+    Private ReadOnly _Message As String = "错误的格式"
+
+    Public Overrides ReadOnly Property Message As String
+        Get
+            Return _Message
+        End Get
+    End Property
 End Class
