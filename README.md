@@ -1,3 +1,5 @@
+**WARNING: DEVELOPMENT ON THIS PROJECT HAS STOPPED, THE SAME FUNCTIONS ARE BEING REIMPLEMENTED BY QT AT [HERE](https://github.com/Ravenclaw-OIer/project-chtholly-qt/).**
+
 # project-chtholly
 A small project to randomly select students in class.
 
